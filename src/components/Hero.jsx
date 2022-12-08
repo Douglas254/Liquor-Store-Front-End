@@ -17,7 +17,7 @@ const Hero = () => {
                 <span className="text-white">Moments</span>.
               </div>
               <div className="pt-7">
-                <button className="text-white bg-red-400 p-2 rounded-sm px-6 md:px-10 mr-2 text-sm font-semibold hover:drop-shadow-md">
+                <button className="text-white bg-[#B7472A] p-2 rounded-sm px-6 md:px-10 mr-2 text-sm font-semibold hover:drop-shadow-md">
                   Shop Now
                 </button>
                 <button className="text-white p-2 rounded-sm px-6 md:px-10 border text-sm font-semibold hover:drop-shadow-md">
