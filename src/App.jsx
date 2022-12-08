@@ -1,7 +1,12 @@
-import { Hero } from "./components";
+import { Hero, StandoutService } from "./components";
 
 function App() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <StandoutService />
+    </>
+  );
 }
 
 export default App;
