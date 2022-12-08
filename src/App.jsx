@@ -1,9 +1,7 @@
+import { Hero } from "./components";
+
 function App() {
-  return (
-    <h1 className="text-3xl text-center pt-8 font-bold">
-      Hello Liquor Store 🍾 🥂 !
-    </h1>
-  );
+  return <Hero />;
 }
 
 export default App;
