@@ -14,7 +14,9 @@
     "react-awesome-reveal": "^4.1.0",
     "react-countup": "^6.4.0",
     "react-dom": "^18.2.0",
-    "react-parallax": "^3.5.1"
+    "react-icons": "^4.7.1",
+    "react-parallax": "^3.5.1",
+    "react-router-dom": "^6.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

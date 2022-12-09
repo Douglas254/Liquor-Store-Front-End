@@ -1,4 +1,4 @@
-import { EXperience, Hero, StandoutService } from "./components";
+import { EXperience, Footer, Hero, StandoutService } from "./components";
 
 function App() {
   return (
@@ -6,6 +6,7 @@ function App() {
       <Hero />
       <StandoutService />
       <EXperience />
+      <Footer />
     </>
   );
 }
