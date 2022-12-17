@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  min-height: 200vh;
-}
-
 @layer base {
   * {
     margin: 0;
