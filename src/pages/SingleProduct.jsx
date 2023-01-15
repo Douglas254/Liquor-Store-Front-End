@@ -3,8 +3,8 @@ import React from "react";
 const SingleProduct = () => {
   return (
     <>
-      <div className="flex mx-32 my-12">
-        <div className="mr-10">
+      <div className="flex mx-28 my-12">
+        <div className="md:mr-10">
           <img
             className="rounded-lg"
             src="https://themewagon.github.io/liquorstore/images/prod-1.jpg"
@@ -12,7 +12,7 @@ const SingleProduct = () => {
           />
         </div>
         <div>
-          <h1 className="font-bold text-5xl">Bacardi 151 Degree</h1>
+          <h1 className="font-bold sm:text-2xl text-5xl">Bacardi 151 Degree</h1>
           <h3 className="my-3 text-2xl font-light">$120.00</h3>
           <p className="font-extralight">
             A small river named Duden flows by their place and supplies it with

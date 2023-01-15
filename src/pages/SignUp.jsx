@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas";
-import {SiGnuprivacyguard} from "react-icons/si"
+import { SiGnuprivacyguard } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const initialValues = {
-  name: "",
+  firstName: "",
+  lastName: "",
+  gender: "male",
   username: "",
   dob: "",
   email: "",
   phone: "",
   password: "",
-  cpassword: "",
+  confirmPassword: "",
 };
 
 function SignUp() {
+  const [response, setResponse] = useState([]);
+
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -21,36 +26,67 @@ function SignUp() {
       onSubmit: (values, actions) => {
         actions.resetForm();
         console.log(values);
+        postData(values);
       },
     });
 
-  // console.log(touched);
+  const postData = (data) => {
+    fetch("https://liquorstorev1.pythonanywhere.com/user", {
+      method: "POST",
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => setResponse(data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <>
       <div className="flex justify-center items-center m-auto w-1/4 md:w-3/4">
         <form className="flex flex-col" onSubmit={handleSubmit}>
+          {response.msg && (
+            <p className="text-red-900 text-2xl">{response.msg}</p>
+          )}
           <h1 className="text-3xl uppercase text-center font-bold my-8 flex mx-3 gap-2">
             <span>
               <SiGnuprivacyguard />
             </span>
             signup
           </h1>
-          {/* Full Name */}
+          {/* First Name */}
           <label className="block font-semibold pt-3" htmlFor="name">
-            Full Name:
+            First Name:
           </label>
           <input
             className="border-b border-gray-400 outline-none py-2"
             type="text"
-            name="name"
-            value={values.name}
+            name="firstName"
+            value={values.firstName}
             onBlur={handleBlur}
             onChange={handleChange}
           />
           <div className="text-red-900 text-sm font-semibold">
-            {errors.name && touched.name && <p>{errors.name}</p>}
+            {errors.firstName && touched.firstName && <p>{errors.firstName}</p>}
           </div>
-
+          {/* Full Name */}
+          <label className="block font-semibold pt-3" htmlFor="name">
+            Last Name:
+          </label>
+          <input
+            className="border-b border-gray-400 outline-none py-2"
+            type="text"
+            name="lastName"
+            value={values.lastName}
+            onBlur={handleBlur}
+            onChange={handleChange}
+          />
+          <div className="text-red-900 text-sm font-semibold">
+            {errors.lastName && touched.lastName && <p>{errors.lastName}</p>}
+          </div>
           {/* Username */}
           <label className="block font-semibold pt-3" htmlFor="name">
             Username:
@@ -66,7 +102,6 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.username && touched.username && <p>{errors.username}</p>}
           </div>
-
           {/* Date of Birth */}
           <label className="block font-semibold pt-3" htmlFor="name">
             Date Of Birth:
@@ -82,7 +117,34 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.dob && touched.dob && <p>{errors.dob}</p>}
           </div>
-
+          <p>Gender</p> {" "}
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={values.gender === "male"}
+            onBlur={handleBlur}
+            onChange={handleChange}
+          />
+          <label htmlFor="html">Male</label>
+          <br /> {" "}
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={values.gender === "female"}
+            onBlur={handleBlur}
+            onChange={handleChange}
+          />
+          <label htmlFor="css">Female</label>
+          <br /> {" "}
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            checked={values.gender === "other"}
+          />
+          <label htmlFor="javascript">Other</label>
           {/* Email */}
           <label className="block font-semibold pt-3" htmlFor="email ">
             Email:
@@ -98,7 +160,6 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.email && touched.email && <p>{errors.email}</p>}
           </div>
-
           {/* Phone Number */}
           <label className="block font-semibold pt-3" htmlFor="email ">
             Phone:
@@ -114,7 +175,6 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.phone && touched.phone && <p>{errors.phone}</p>}
           </div>
-
           {/* Password */}
           <label className="block font-semibold pt-3" htmlFor="passw ord">
             Password:
@@ -130,7 +190,6 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.password && touched.password && <p>{errors.password}</p>}
           </div>
-
           {/* Confirm Password */}
           <label className="block font-semibold pt-3" htmlFor="cpass word">
             Confirm Password:
@@ -138,22 +197,34 @@ function SignUp() {
           <input
             className="border-b border-gray-400 outline-none py-2"
             type="password"
-            name="cpassword"
-            value={values.cpassword}
+            name="confirmPassword"
+            value={values.confirmPassword}
             onBlur={handleBlur}
             onChange={handleChange}
           />
           <div className="text-red-900 text-sm font-semibold">
-            {errors.cpassword && touched.cpassword && <p>{errors.cpassword}</p>}
+            {errors.confirmPassword && touched.confirmPassword && (
+              <p>{errors.confirmPassword}</p>
+            )}
           </div>
-
           {/* Submit Form */}
-          <button
-            className="border bg-red-400 my-5 py-2 font-bold transition-all ease-in-out hover:scale-105 rounded-md"
-            type="submit"
-          >
-            Sign Up
-          </button>
+          {response.success ? (
+            <Link to="/signin">
+              <button
+                className="border bg-red-400 my-5 py-2 font-bold transition-all ease-in-out hover:scale-105 rounded-md"
+                type="submit"
+              >
+                Go to Login
+              </button>
+            </Link>
+          ) : (
+            <button
+              className="border bg-red-400 my-5 py-2 font-bold transition-all ease-in-out hover:scale-105 rounded-md"
+              type="submit"
+            >
+              Sign Up
+            </button>
+          )}
         </form>
       </div>
     </>
