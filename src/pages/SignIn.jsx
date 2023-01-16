@@ -34,11 +34,17 @@ function SignIn() {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => setRes(data))
+      .then((data) => {
+        
+        if (data.success === true) {
+          localStorage.setItem("user", JSON.stringify(data));
+        }
+        setRes(data);
+      })
       .catch((err) => console.log(err));
   };
 
-  console.log(res.token);
+  console.log(res);
   return (
     <>
       <div className="flex justify-center items-center m-auto w-1/4 md:w-3/4 min-h-screen">
@@ -84,7 +90,7 @@ function SignIn() {
 
           {/* Submit Form */}
           {res.success ? (
-          navigate("/")
+            navigate("/")
           ) : (
             <button
               className="border bg-red-400 my-5 py-2 font-bold transition-all ease-in-out hover:scale-105 rounded-md"

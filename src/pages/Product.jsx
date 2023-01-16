@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FcSearch } from "react-icons/fc";
+import { Link } from "react-router-dom";
 export default function Posts() {
   const [APIData, setAPIData] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
@@ -31,7 +32,7 @@ export default function Posts() {
   return (
     <div>
       <div className="flex justify-end items-center mx-2 border-b my-4">
-        <FcSearch size={32}/>
+        <FcSearch size={32} />
         <input
           placeholder="Search Product"
           onChange={(e) => searchItems(e.target.value)}
@@ -57,13 +58,11 @@ export default function Posts() {
                       <h3>$. {buy_price}</h3>
                       <h6>In Stock {quantity_in_stock}</h6>
                       <p>{text_description}</p>
-
-                      <button
-                        className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5"
-                        onClick={() => dispatch({ type: "ADD", payload: item })}
-                      >
-                        add to cart
-                      </button>
+                      <Link to={`product/${id}`}>
+                        <button className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5">
+                          Details
+                        </button>
+                      </Link>
                     </div>
                   </>
                 );
@@ -87,9 +86,11 @@ export default function Posts() {
                       <h6>In Stock {quantity_in_stock}</h6>
                       <p>{text_description}</p>
 
-                      <button className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5">
-                        add to cart
-                      </button>
+                      <Link to={`/singleproduct/${id}`}>
+                        <button className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5">
+                          Details
+                        </button>
+                      </Link>
                     </div>
                   </>
                 );

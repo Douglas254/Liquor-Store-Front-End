@@ -4,6 +4,9 @@ import { GrTwitter, GrFacebookOption, GrInstagram } from "react-icons/gr";
 import { BsDribbble } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const TopNavbar = () => {
+  const logout = () => {
+    localStorage.removeItem("user");
+  };
   return (
     <>
       <div className="bg-[#A23F25] flex flex-col md:flex-row md:justify-between md:items-center px-2 md:px-4">
@@ -52,9 +55,18 @@ const TopNavbar = () => {
             <div className="text-[#ffff63] hover:text-[#f1f605] ">
               <Link to="/signup">sign up</Link>
             </div>
-            <div className="text-[#ffff63] hover:text-[#f1f605] ">
-              <Link to="/signin">log in</Link>
-            </div>
+            {localStorage.getItem("user") === null ? (
+              <div className="text-[#ffff63] hover:text-[#f1f605] ">
+                <Link to="/signin">log in</Link>
+              </div>
+            ) : (
+              <div
+                className="text-[#ffff63] hover:text-[#f1f605]"
+                onClick={logout}
+              >
+                <Link to="/signin">log out</Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

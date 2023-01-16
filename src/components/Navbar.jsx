@@ -1,8 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
+  const [cartTotal, setCartTotal] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://liquorstorev1.pythonanywhere.com/productCart`)
+      .then((response) => {
+        setCartTotal(response.data.length);
+      });
+  }, []);
   return (
     <div>
       <nav className="nav flex flex-wrap items-center justify-between px-4 bg-[#060606] text-white">
@@ -39,14 +49,18 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li className="border-t md:border-none">
-            <a
-              href="/blog/"
-              className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"
-            >
-              Cart
-            </a>
-          </li>
+          {localStorage.getItem("user") === null ? (
+            ""
+          ) : (
+            <li className="border-t md:border-none">
+              <a
+                href="/blog/"
+                className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"
+              >
+                Cart <span>{cartTotal}</span>
+              </a>
+            </li>
+          )}
         </ul>
       </nav>
     </div>
