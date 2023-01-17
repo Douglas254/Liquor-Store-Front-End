@@ -55,7 +55,7 @@ export default function Posts() {
                     <div className="w-1/4 px-8 relative my-12" key={id}>
                       <img src={image} alt={`product ${id}`} />
                       <p>{name}</p>
-                      <h3>$. {buy_price}</h3>
+                      <h3>Ksh. {buy_price}</h3>
                       <h6>In Stock {quantity_in_stock}</h6>
                       <p>{text_description}</p>
                       <Link to={`product/${id}`}>
@@ -82,7 +82,7 @@ export default function Posts() {
                     <div className="w-1/4 px-8 relative my-12" key={id}>
                       <img src={image} alt={`product ${id}`} />
                       <p>{name}</p>
-                      <h3>$. {buy_price}</h3>
+                      <h3>Ksh. {buy_price}</h3>
                       <h6>In Stock {quantity_in_stock}</h6>
                       <p>{text_description}</p>
 

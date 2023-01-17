@@ -75,7 +75,7 @@ const LatestProduct = () => {
                 <div className="grid items-center justify-items-start px-4">
                   <h1 className="text-base font-semibold lg:text-sm">{name}</h1>
                   <p className="text-sm text-justify lg:text-xs">{text_description}</p>
-                  <h3>$ {buy_price}</h3>
+                  <h3>Ksh. {buy_price}</h3>
                 </div>
                 <div className="flex items-center justify-center px-4 w-full">
                   <a
@@ -84,7 +84,7 @@ const LatestProduct = () => {
                     role={"button"}
                     className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black text-center text-slate-100 py-1.5"
                   >
-                    Add to Cart
+                   Details
                   </a>
                 </div>
               </div>

@@ -16,19 +16,19 @@ const TopNavbar = () => {
               <span>
                 <FaPhoneAlt />
               </span>
-              +00 1234 567
+              +2547 99 777 888
             </li>
             <li className="flex items-center gap-2">
               <span>
                 <FaPaperPlane />
               </span>
-              youremail@email.com
+              sliquorltd@gmail.com
             </li>
           </ul>
         </div>
         <div className="flex justify-around pt-3 pb-2 md:py-1">
           <ul className="flex items-center text-sm gap-3 mr-4">
-            <li className="text-white">
+            {/* <li className="text-white">
               <a href="#">
                 <GrFacebookOption />
               </a>
@@ -37,17 +37,20 @@ const TopNavbar = () => {
               <a href="#">
                 <GrTwitter />
               </a>
-            </li>
+            </li> */}
             <li className="text-[#F3EAEA]">
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/sliquor_limited"
+              >
                 <GrInstagram />
               </a>
             </li>
-            <li className="text-[#FFF0D5]">
+            {/* <li className="text-[#FFF0D5]">
               <a href="#">
                 <BsDribbble />
               </a>
-            </li>
+            </li> */}
           </ul>
 
           {/* signup and sign in */}

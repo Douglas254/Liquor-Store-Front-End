@@ -26,7 +26,7 @@ const Footer = () => {
           </p>
           <Slide direction="up" cascade duration={500} triggerOnce={true}>
             <ul className=" flex gap-5 mt-3">
-              <li className="bg-[#B7472A] p-3 rounded-full text-[#DBA395]">
+              {/* <li className="bg-[#B7472A] p-3 rounded-full text-[#DBA395]">
                 <a href="#">
                   <GrTwitter />
                 </a>
@@ -36,9 +36,12 @@ const Footer = () => {
                 <a href="#">
                   <GrFacebookOption />
                 </a>
-              </li>
+              </li> */}
               <li className="bg-[#B7472A] p-3 rounded-full text-[#DBA395]">
-                <a href="#">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/sliquor_limited"
+                >
                   <GrInstagram />
                 </a>
               </li>
@@ -161,24 +164,25 @@ const Footer = () => {
               <span className="mr-6 mt-2 text-slate-50">
                 <FiMap size={22} />
               </span>
-              203 Fake St. Mountain View, San Francisco, California, USA
+              Mombasa - Malindi Highway,Behind Naivas Supermarket Next To Shiva
+              Mombasa Limited
             </li>
             <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer my-3">
               <span className="mr-6">
                 <FaPhoneAlt />
               </span>
-              +2 392 3929 210
+              +2547 99 777 888
             </li>
             <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer">
               <span className="mr-6">
                 <FaPaperPlane />
               </span>
-              info@yourdomain.com
+              sliquorltd@gmail.com
             </li>
           </ul>
         </div>
       </div>
-      <div className="bg-black text-[#ffffff80] flex justify-center items-center px-11">
+      {/* <div className="bg-black text-[#ffffff80] flex justify-center items-center px-11">
         <p className="py-12 md:flex">
           Copyright &copy; {new Date().getFullYear()} All rights reserved
           <span className="hidden md:inline-block mx-1">|</span>
@@ -196,7 +200,7 @@ const Footer = () => {
             </a>
           </span>
         </p>
-      </div>
+      </div> */}
     </>
   );
 };

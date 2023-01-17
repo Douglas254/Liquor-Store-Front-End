@@ -94,7 +94,7 @@ const SingleProduct = () => {
         </div>
         <div>
           <h1 className="font-bold sm:text-2xl text-5xl">{name}</h1>
-          <h3 className="my-3 text-2xl font-light">$ {buy_price}</h3>
+          <h3 className="my-3 text-2xl font-light">Ksh. {buy_price}</h3>
           <p className="font-extralight">{text_description}</p>
           <div className="my-3 mx-14">
             <button

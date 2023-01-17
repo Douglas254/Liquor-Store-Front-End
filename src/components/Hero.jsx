@@ -17,9 +17,9 @@ const Hero = () => {
             <Slide direction="up" delay={500} triggerOnce={true}>
               <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold text-green-400">
                 <h1 className="pb-5">
-                  Good <span className="text-white">Drink</span> for Good
+                  Slick <span className="text-white">Choice</span> Destination
                 </h1>
-                <span className="text-white">Moments</span>.
+                {/* <span className="text-white">Moments</span>. */}
               </div>
               <div className="pt-7">
                 <button className="text-white bg-[#B7472A] p-2 rounded-sm px-6 md:px-10 mr-2 text-sm font-semibold hover:drop-shadow-md">
