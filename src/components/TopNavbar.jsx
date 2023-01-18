@@ -65,7 +65,10 @@ const TopNavbar = () => {
             ) : (
               <div
                 className="text-[#ffff63] hover:text-[#f1f605]"
-                onClick={logout}
+                onClick={() => {
+                  logout();
+                  window.location.reload();
+                }}
               >
                 <Link to="/signin">log out</Link>
               </div>

@@ -53,7 +53,11 @@ export default function Posts() {
                 return (
                   <>
                     <div className="w-1/4 px-8 relative my-12" key={id}>
-                      <img src={image} alt={`product ${id}`} />
+                      <img
+                        src={image}
+                        alt={`product ${id}`}
+                        className="w-full h-[200px] border-t border-x"
+                      />
                       <p>{name}</p>
                       <h3>Ksh. {buy_price}</h3>
                       <h6>In Stock {quantity_in_stock}</h6>
@@ -80,7 +84,11 @@ export default function Posts() {
                 return (
                   <>
                     <div className="w-1/4 px-8 relative my-12" key={id}>
-                      <img src={image} alt={`product ${id}`} />
+                      <img
+                        src={image}
+                        alt={`product ${id}`}
+                        className="w-full h-[200px] border-t border-x"
+                      />
                       <p>{name}</p>
                       <h3>Ksh. {buy_price}</h3>
                       <h6>In Stock {quantity_in_stock}</h6>

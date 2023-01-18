@@ -1,6 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://liquorstorev1.pythonanywhere.com/productCart`)
+      .then((response) => {
+        setCart(response.data);
+      });
+  }, []);
+
   return (
     <>
       <section className="mb-16">
@@ -48,15 +60,9 @@ const Cart = () => {
                     <td className="quantity border-bottom-0">
                       <div className="input-group">
                         <div className="my-3 mx-14">
-                          <button className="border px-4 py-1 font-bold text-sm">
-                            -
-                          </button>
-                          <button className="mx-2 px-12 border py-1 font-bold text-sm">
+                          <div className="mx-2 px-12 border py-1 font-bold text-sm">
                             1
-                          </button>
-                          <button className="border px-4 py-1 font-bold text-sm">
-                            +
-                          </button>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -87,7 +93,7 @@ const Cart = () => {
             <div className="w-1/2">
               <div className="mb-3 flex flex-col gap-4">
                 <h3 className="text-3xl">Cart Totals</h3>
-                <p className="flex justify-between">
+                {/* <p className="flex justify-between">
                   <span>Subtotal</span>
                   <span>$20.60</span>
                 </p>
@@ -98,7 +104,7 @@ const Cart = () => {
                 <p className="flex justify-between">
                   <span>Discount</span>
                   <span>$3.00</span>
-                </p>
+                </p> */}
                 <hr />
                 <p className="flex justify-between total-price">
                   <span>Total</span>
@@ -106,12 +112,12 @@ const Cart = () => {
                 </p>
               </div>
               <p className="w-full bg-[#B7472A] py-4">
-                <a
-                  href="checkout.html"
+                <Link
+                  to="/CheckoutContact"
                   className="flex justify-center text-sm text-white "
                 >
                   Proceed to Checkout
-                </a>
+                </Link>
               </p>
             </div>
           </div>

@@ -16,13 +16,16 @@ const Footer = () => {
         <div className="">
           <h2 className="text-white capitalize my-7 text-3xl">
             <a href="#">
-              <span className="uppercase hover:text-[#B7472A]">liquor</span>
+              <span className="uppercase hover:text-[#B7472A] mr-[6px]">
+                liquor
+              </span>
               <span className="text-[#ffffff4d]">store</span>
             </a>
           </h2>
-          <p className="text-[#ffffffe6]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            omnis ad enim magni, laboriosam ab!
+          <p className="text-[#ffffffe6] text-sm">
+            Your one stop destination for all your favorite alcoholic and non
+            alcoholic beverages together with a variety of snacks and other
+            items. All at pocket friendly prices.
           </p>
           <Slide direction="up" cascade duration={500} triggerOnce={true}>
             <ul className=" flex gap-5 mt-3">
@@ -59,31 +62,25 @@ const Footer = () => {
               <span className="mr-2">
                 <GoChevronRight />
               </span>
-              my account
+              My account
             </li>
             <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer">
               <span className="mr-2">
                 <GoChevronRight />
               </span>
-              my account
+              Register
             </li>
             <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer">
               <span className="mr-2">
                 <GoChevronRight />
               </span>
-              register
+              Log in
             </li>
             <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer">
               <span className="mr-2">
                 <GoChevronRight />
               </span>
-              log in
-            </li>
-            <li className="text-[#ffffff80] flex items-center py-1 cursor-pointer">
-              <span className="mr-2">
-                <GoChevronRight />
-              </span>
-              my order
+              My order
             </li>
           </ul>
         </div>

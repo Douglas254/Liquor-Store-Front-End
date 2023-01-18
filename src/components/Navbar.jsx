@@ -13,6 +13,7 @@ const Navbar = () => {
         setCartTotal(response.data.length);
       });
   }, []);
+  
   return (
     <div>
       <nav className="nav flex flex-wrap items-center justify-between px-4 bg-[#060606] text-white">
@@ -53,12 +54,12 @@ const Navbar = () => {
             ""
           ) : (
             <li className="border-t md:border-none">
-              <a
-                href="/blog/"
+              <Link
+                to="/cart"
                 className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker"
               >
                 Cart <span>{cartTotal}</span>
-              </a>
+              </Link>
             </li>
           )}
         </ul>

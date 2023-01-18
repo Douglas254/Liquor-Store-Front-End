@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { signupSchema } from "../schemas/login";
 import { BsPersonFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const initialValues = {
   username: "",
@@ -35,9 +36,12 @@ function SignIn() {
     })
       .then((res) => res.json())
       .then((data) => {
-        
         if (data.success === true) {
           localStorage.setItem("user", JSON.stringify(data));
+          toast.success("Login Successfully");
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         }
         setRes(data);
       })

@@ -18,12 +18,12 @@ const Kind = () => {
     <>
       <div className="flex justify-center items-center">
         {productType.map(({ category_name, id, image }) => (
-          <div className="mb-10" key={id}>
-            <div className="border-2 border-red-800 inline-block rounded-full p-2 hover:scale-95 hover:cursor-pointer mx-32">
-              <Link to={`/products/${id}`}>
+          <div className="mb-10 mx-9" key={id}>
+            <div class="border-2 border-red-800 inline-block rounded-full p-2 hover:scale-95 hover:cursor-pointer">
+              <Link to={`productype/${id}`}>
                 <img
                   src={image}
-                  alt={`product type ${id}`}
+                  // alt={`product_type ${id}`}
                   className="rounded-full w-32 h-32"
                 />
               </Link>

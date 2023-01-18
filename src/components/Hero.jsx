@@ -2,6 +2,7 @@ import React from "react";
 import { Parallax } from "react-parallax";
 import { Slide } from "react-awesome-reveal";
 import bg_liquor_1 from "../assets/bg_1.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,13 +18,13 @@ const Hero = () => {
             <Slide direction="up" delay={500} triggerOnce={true}>
               <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold text-green-400">
                 <h1 className="pb-5">
-                  Slick <span className="text-white">Choice</span> Destination
+                  Sleek | <span className="text-white">Choice |</span> Destination
                 </h1>
                 {/* <span className="text-white">Moments</span>. */}
               </div>
               <div className="pt-7">
                 <button className="text-white bg-[#B7472A] p-2 rounded-sm px-6 md:px-10 mr-2 text-sm font-semibold hover:drop-shadow-md">
-                  Shop Now
+                  <Link to="product">Shop Now</Link>
                 </button>
                 <button className="text-white p-2 rounded-sm px-6 md:px-10 border text-sm font-semibold hover:drop-shadow-md">
                   Read more

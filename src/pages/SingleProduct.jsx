@@ -63,7 +63,15 @@ const SingleProduct = () => {
         )
         .then((res) => {
           setCartRes(res.data);
-          toast.success(`${res.data.msg}`);
+          if (res.data.msg == "Item already in cart") {
+            toast.error("Item already in cart");
+            window.location.reload();
+          } else {
+            toast.success(`${res.data.msg}`);
+             setTimeout(() => {
+               window.location.reload();
+             }, 1000);
+          }
         })
         .catch((err) => console.log(err));
     } else {
@@ -89,10 +97,10 @@ const SingleProduct = () => {
   return (
     <>
       <div className="flex mx-28 my-12">
-        <div className="md:mr-10">
-          <img className="rounded-lg" src={image} alt="" />
+        <div className="md:mr-10 w-1/2">
+          <img className="rounded-lg w-full h-[80vh]" src={image} alt="" />
         </div>
-        <div>
+        <div className="w-1/2 border-l-2 border-red-800 pl-10">
           <h1 className="font-bold sm:text-2xl text-5xl">{name}</h1>
           <h3 className="my-3 text-2xl font-light">Ksh. {buy_price}</h3>
           <p className="font-extralight">{text_description}</p>

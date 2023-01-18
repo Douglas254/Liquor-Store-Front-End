@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { signupSchema } from "../schemas";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const initialValues = {
   firstName: "",
@@ -40,7 +41,10 @@ function SignUp() {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => setResponse(data))
+      .then((data) => {
+        setResponse(data);
+        toast.success(`${response.msg}`)
+      })
       .catch((err) => console.log(err));
   };
 
@@ -117,34 +121,42 @@ function SignUp() {
           <div className="text-red-900 text-sm font-semibold">
             {errors.dob && touched.dob && <p>{errors.dob}</p>}
           </div>
-          <p>Gender</p> {" "}
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-            checked={values.gender === "male"}
-            onBlur={handleBlur}
-            onChange={handleChange}
-          />
-          <label htmlFor="html">Male</label>
-          <br /> {" "}
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-            checked={values.gender === "female"}
-            onBlur={handleBlur}
-            onChange={handleChange}
-          />
-          <label htmlFor="css">Female</label>
-          <br /> {" "}
-          <input
-            type="radio"
-            name="gender"
-            value="other"
-            checked={values.gender === "other"}
-          />
-          <label htmlFor="javascript">Other</label>
+          <label className="block font-semibold pt-3" htmlFor="name">
+            Gender
+          </label>
+          <div className="flex gap-3">
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              checked={values.gender === "male"}
+              onBlur={handleBlur}
+              onChange={handleChange}
+            />
+            <label htmlFor="html">Male</label>
+          </div>
+          <br />
+          <div className="flex gap-3">
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              checked={values.gender === "female"}
+              onBlur={handleBlur}
+              onChange={handleChange}
+            />
+            <label htmlFor="css">Female</label>
+          </div>
+          <br />
+          <div className="flex gap-3">
+            <input
+              type="radio"
+              name="gender"
+              value="other"
+              checked={values.gender === "other"}
+            />
+            <label htmlFor="javascript">Other</label>
+          </div>
           {/* Email */}
           <label className="block font-semibold pt-3" htmlFor="email ">
             Email:
