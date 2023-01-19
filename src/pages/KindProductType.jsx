@@ -7,13 +7,26 @@ export default function Posts() {
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
+  const { productId } = useParams();
+  console.log(productId);
+
   useEffect(() => {
     axios
-      .get(`https://liquorstorev1.pythonanywhere.com/product`)
+      .get(
+        `https://liquorstorev1.pythonanywhere.com/product/product_type/${productId}`
+      )
       .then((response) => {
+        console.log(response.data);
+        // console.log(productID);
         setAPIData(response.data);
       });
   }, []);
+
+  //   const singleType = APIData.find((dat) => dat.id === Number(productID));
+
+  //   console.log("single" + singleType);
+
+  console.log(APIData);
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);

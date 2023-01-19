@@ -18,7 +18,8 @@ const Hero = () => {
             <Slide direction="up" delay={500} triggerOnce={true}>
               <div className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-center font-bold text-green-400">
                 <h1 className="pb-5">
-                  Sleek | <span className="text-white">Choice |</span> Destination
+                  Sleek | <span className="text-white">Choice |</span>{" "}
+                  Destination
                 </h1>
                 {/* <span className="text-white">Moments</span>. */}
               </div>
@@ -26,9 +27,12 @@ const Hero = () => {
                 <button className="text-white bg-[#B7472A] p-2 rounded-sm px-6 md:px-10 mr-2 text-sm font-semibold hover:drop-shadow-md">
                   <Link to="product">Shop Now</Link>
                 </button>
-                <button className="text-white p-2 rounded-sm px-6 md:px-10 border text-sm font-semibold hover:drop-shadow-md">
+                <a
+                  href="#hero"
+                  className="text-white p-2 rounded-sm px-6 md:px-10 border text-sm font-semibold hover:drop-shadow-md"
+                >
                   Read more
-                </button>
+                </a>
               </div>
             </Slide>
           </div>

@@ -68,12 +68,14 @@ const SingleProduct = () => {
             window.location.reload();
           } else {
             toast.success(`${res.data.msg}`);
-             setTimeout(() => {
-               window.location.reload();
-             }, 1000);
+            setTimeout(() => {
+              window.location.reload();
+            }, 1000);
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          toast.error(`${err.response.data.msg}`);
+        });
     } else {
       toast.error("you need to login");
       navigate("/signin");

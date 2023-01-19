@@ -11,7 +11,7 @@ import { BsFillSuitHeartFill } from "react-icons/bs";
 const Footer = () => {
   return (
     <>
-      <div className="bg-[#1A1A1A] p-3 grid md:gap-3 md:grid-cols-5 md:py-16 md:px-5 lg:p-16 lg:gap-0">
+      <div className="bg-[#1A1A1A] p-3 grid md:gap-3 md:grid-cols-4 md:py-16 md:px-5 lg:p-16 lg:gap-0">
         {/* liquor store */}
         <div className="">
           <h2 className="text-white capitalize my-7 text-3xl">
@@ -23,9 +23,7 @@ const Footer = () => {
             </a>
           </h2>
           <p className="text-[#ffffffe6] text-sm">
-            Your one stop destination for all your favorite alcoholic and non
-            alcoholic beverages together with a variety of snacks and other
-            items. All at pocket friendly prices.
+            For more information about us click on the Instagram link below 
           </p>
           <Slide direction="up" cascade duration={500} triggerOnce={true}>
             <ul className=" flex gap-5 mt-3">
@@ -53,7 +51,7 @@ const Footer = () => {
         </div>
 
         {/* my accounts */}
-        <div className="">
+        {/* <div className="">
           <h2 className="capitalize my-7 text-2xl text-[#ffffffcc]">
             my accounts
           </h2>
@@ -83,7 +81,7 @@ const Footer = () => {
               My order
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Information */}
         <div className="">
@@ -119,7 +117,7 @@ const Footer = () => {
         </div>
 
         {/* my accounts */}
-        <div className="">
+        {/* <div className="">
           <h2 className="capitalize my-7 text-2xl text-[#ffffffcc]">
             Quick Link
           </h2>
@@ -149,7 +147,7 @@ const Footer = () => {
               Faq's
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Question */}
         <div className="">

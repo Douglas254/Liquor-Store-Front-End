@@ -14,7 +14,7 @@ const StandoutService = () => {
             <img src={support} className="w-16 h-16 m-2" alt="support" />
           </div>
           <div>
-            <h2 className="text-1xl text-white uppercase pt-6 pb-2">
+            <h2 className="text-1xl text-white uppercase pt-6 pb-2" id="hero">
               online support 24/7
             </h2>
             <p className="text-white">
@@ -39,7 +39,11 @@ const StandoutService = () => {
         </div>
         <div className="p-7 lg:flex lg:justify-center bg-[#A23F25]">
           <div className="min-w-fit lg:mt-9">
-            <img src={freedelivery} className="w-16 h-16 m-2" alt="freedelivery" />
+            <img
+              src={freedelivery}
+              className="w-16 h-16 m-2"
+              alt="freedelivery"
+            />
           </div>
           <div>
             <h2 className="text-1xl text-white uppercase pt-6 pb-2">

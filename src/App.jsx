@@ -10,6 +10,7 @@ import CheckoutContact from "./pages/CheckoutContact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SingleProductType from "./pages/SingleProductType";
+import KindProductType from "./pages/KindProductType";
 
 function App() {
   return (
@@ -24,7 +25,11 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/singleproduct/:productId" element={<SingleProduct />} />
-        <Route path="/productype/:productId" element={<SingleProductType />} />
+        <Route path="/productype/:productId" element={<KindProductType />} />
+        <Route
+          path="/product/product_type/:productId"
+          element={<KindProductType />}
+        />
         <Route path="/CheckoutContact" element={<CheckoutContact />} />
       </Routes>
       <Footer />
