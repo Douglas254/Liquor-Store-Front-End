@@ -40,7 +40,7 @@ export default function Posts() {
           className="outline-none"
         />
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {searchInput.length > 1
           ? filteredResults.map(
               ({
