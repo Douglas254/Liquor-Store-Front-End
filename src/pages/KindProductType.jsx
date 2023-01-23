@@ -53,7 +53,7 @@ export default function Posts() {
           className="outline-none"
         />
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap my-7">
         {searchInput.length > 1
           ? filteredResults.map(
               ({
@@ -66,7 +66,7 @@ export default function Posts() {
               }) => {
                 return (
                   <>
-                    <div className="w-1/4 px-8 relative my-12" key={id}>
+                    <div className="w-1/4 px-8 relative my-8" key={id}>
                       <img
                         src={image}
                         alt={`product ${id}`}
@@ -97,7 +97,7 @@ export default function Posts() {
               }) => {
                 return (
                   <>
-                    <div className="w-1/4 px-8 relative my-12" key={id}>
+                    <div className="w-1/4 px-8 relative my-8" key={id}>
                       <img
                         src={image}
                         alt={`product ${id}`}
